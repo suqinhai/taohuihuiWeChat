@@ -1,0 +1,64 @@
+<view>
+    <!-- 轮播 -->
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}">
+            <swiper-item>
+                <image src="{{item}}" class="slide-image" width="355" height="150" />
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="shopContent">
+        <view class="title">大圆环 圆圈腰带女 休闲简约百搭装饰连衣裙裤带 真皮学生细皮带</view>
+        <view class="sold">329件已售</view>
+        <view class="price">
+            <font>¥ <span>9.9</span></font><span></span>
+            <view class="fr">¥15</view>
+        </view>
+    </view>
+</view>
+<view class="reason">
+    <view class="title">推荐理由</view>
+    <span>简约，时尚，休闲，百搭，精选优质牛皮，质感合金扣头，人性化设计，点亮全身。</span>
+</view>
+<view class="details" style="text-align: center;">
+    <view class="title">产品详情</view>
+    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
+    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
+    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
+</view>
+<view class="btn">
+    <a class="home">
+        <view></view>
+        <font>首页</font>
+    </a>
+    <!-- 是微信浏览器和天猫商品 -->
+    <a class="browser">浏览器购买</a>
+    <!-- 不是微信浏览器和是天猫商品 -->
+    <!-- <a   class="browser">浏览器购买</a> -->
+    <!--  不是是天猫商品  -->
+    <!-- <a  class="browser">浏览器购买</a> -->
+    <a href="javascript:;" class="code">淘口令购买</a>
+</view>
+<!-- 淘口令 -->
+<view>
+    
+    <!-- 弹窗 -->
+    <section class="model" id="model">
+        <view class="warp codeWarp">
+            <view class="head">
+                <span class="codeLogo"></span>
+                <!-- {{data.taoWord}} -->
+                <view>￥QWFLZwLST0N￥</view>
+                <!-- <view v-show="isBrowser() == 2 || isBrowser() == 3 ">
+                    <view>{{data.taoWord}}</view>
+                </view> -->
+            </view>
+            <view class="copy">
+                <!-- <view  class="btn">一键复制淘口令</view> -->
+                <view href="javascipt:viod(0)" class="copyCode" >一键复制淘口令</view>
+                <p>点击一键复制后，请打开【手机淘宝】购买，若复制失败，请手动复制淘口令。</p>
+                <!-- <p>手机如果没有安装【手机淘宝】，请选择浏览器购买方式</p> -->
+            </view>
+        </view>
+    </section>
+</view>

@@ -1,0 +1,93 @@
+<!--index.wxml-->
+<!-- 导航 -->
+<view class="navList">
+    <text class="classify active">首页</text>
+    <text class="classify">服饰鞋包</text>
+    <text class="classify">美妆</text>
+    <text class="classify">家居家电</text>
+    <text class="classify">母婴</text>
+    <text class="classify">唯品国际</text>
+    <text class="classify">唯品·奢</text>
+    <text class="classify">生活超市</text>
+    <text class="classify">服饰鞋包</text>
+    <text class="classify">美妆</text>
+    <text class="classify">家居家电</text>
+    <text class="classify">母婴</text>
+    <text class="classify">唯品国际</text>
+    <text class="classify">唯品·奢</text>
+    <text class="classify">生活超市</text>
+</view>
+<!-- 轮播 -->
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150" />
+        </swiper-item>
+    </block>
+</swiper>
+<view class="content">
+    <!-- <view class="title"><text class="caption">今日特卖·每天早10点 晚8点上新</text></view> -->
+    <image class="captionImg" src="http://b.vimage1.com/2017/06/21/9672/14980202748878.jpg" />
+    <view class="itemList">
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+        <view class="item">
+            <image class="itemImg" src="https://img.alicdn.com/bao/uploaded/i3/2051431638/TB2MKhToSFmpuFjSZFrXXayOXXa_!!2051431638.jpg_q50.jpg" />
+            <view class="title">[为你推荐]不锈钢雪克杯/摇酒器/调酒壶/摇摇杯 奶茶店水吧调鸡尾酒用品用具</view>
+            <view class="price">￥30</view>
+        </view>
+    </view>
+</view>
+<view class="spinner">
+    <view class="spinner-container container1">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+    </view>
+    <view class="spinner-container container2">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+    </view>
+    <view class="spinner-container container3">
+        <view class="circle1"></view>
+        <view class="circle2"></view>
+        <view class="circle3"></view>
+        <view class="circle4"></view>
+    </view>
+</view>
