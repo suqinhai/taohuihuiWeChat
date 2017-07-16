@@ -10,12 +10,14 @@
     <text class="classify">唯品·奢</text>
     <text class="classify">生活超市</text>
     <text class="classify">服饰鞋包</text>
-    <text class="classify">美妆</text>
+    <text class="classify">美妆</text>h
     <text class="classify">家居家电</text>
     <text class="classify">母婴</text>
     <text class="classify">唯品国际</text>
     <text class="classify">唯品·奢</text>
     <text class="classify">生活超市</text>
+</view>
+<view class="navListHei">
 </view>
 <!-- 轮播 -->
 <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">

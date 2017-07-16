@@ -39,9 +39,8 @@
     <!-- <a  class="browser">浏览器购买</a> -->
     <a href="javascript:;" class="code">淘口令购买</a>
 </view>
-<!-- 淘口令 -->
+<!-- 淘口令 -->s
 <view>
-    
     <!-- 弹窗 -->
     <section class="model" id="model">
         <view class="warp codeWarp">

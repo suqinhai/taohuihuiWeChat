@@ -8,6 +8,14 @@
 	line-height: 70rpx;
 	word-break:keep-all;           /* 不换行 */
 	white-space:nowrap;          /* 不换行 */
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top:0;
+}
+
+.navListHei{
+  height: 70rpx;
 }
 
 .navList .classify{
