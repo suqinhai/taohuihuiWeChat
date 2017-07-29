@@ -3,13 +3,13 @@
 var app = getApp()
 Page({
     data: {
-        motto: 'Hello World',
+        motto: '首页',
+        navData:[],
+        itemData:[],
+        posterData:[],
+        page:1,
+        pageSize:30,
         userInfo: {},
-        imgUrls: [
-            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-            'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-            'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-        ],
         indicatorDots: true,
         autoplay: true,
         interval: 5000,
@@ -22,46 +22,65 @@ Page({
         })
     },
     onLoad: function() {
-        console.log('onLoad')
+        
         var that = this
-            //调用应用实例的方法获取全局数据
-        app.getUserInfo(function(userInfo) {
-            //更新数据
+        
+        //头部导航
+        var url = 'http://localhost:3000/taohuihui/nav/get';
+        that.getAjax(url,function(res){
             that.setData({
-                userInfo: userInfo
+                navData: res.data.list
             })
         })
-        wx.navigateTo({
-            url: '../details/details'
+
+        //轮播
+        var url = 'http://localhost:3000/taohuihui/poster/get';
+        that.getAjax(url,function(res){
+            that.setData({
+                posterData: res.data.list
+            })
         })
 
+        //时尚精选
+        that.onReachBottom()
+
+        //设置标题
         wx.setNavigationBarTitle({
-            title: '当前页面'
+            title: '淘优惠'
         })
     },
-    changeIndicatorDots: function(e) {
-        this.setData({
-            indicatorDots: !this.data.indicatorDots
+    getAjax:function(url,fn){
+        wx.request({
+          url: url,
+          method:'GET',
+          header: {
+              'content-type': 'application/json'
+          },
+          success: function(res) {
+            fn(res)
+          }
         })
     },
-    changeAutoplay: function(e) {
-        this.setData({
-            autoplay: !this.data.autoplay
+    onReachBottom: function(){
+        var that = this;
+        var url = 'http://localhost:3000/taohuihui/goods/get?pageSize=' + that.data.pageSize + '&page=' + that.data.page;
+        that.getAjax(url,function(res){
+            var list = res.data.list;
+            var len = res.data.list.length;
+            for (var i = 0; i < len; i++){
+                that.data.itemData.push(list[i])
+            }
+            that.setData({
+                itemData:that.data.itemData
+            })
+            that.data.page++;
         })
+        //wx.stopPullDownRefresh()
     },
-    intervalChange: function(e) {
-        this.setData({
-            interval: e.detail.value
-        })
-    },
-    durationChange: function(e) {
-        this.setData({
-            duration: e.detail.value
-        })
-    },
-    onPullDownRefresh: function() {
-        wx.showLoading({
-            title: '加载中',
+    toPage:function(event){
+        var _id = event.currentTarget._id
+        wx.navigateTo({
+          url: '../details/details?_id=' + _id
         })
     }
 })
