@@ -3,13 +3,7 @@
 var app = getApp()
 Page({
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        imgUrls: [
-            'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-            'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-            'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
-        ],
+        detailsData: {},
         indicatorDots: true,
         autoplay: true,
         interval: 5000,
@@ -21,36 +15,36 @@ Page({
             url: '../logs/logs'
         })
     },
-    onLoad: function() {
-        console.log('onLoad')
+    onLoad: function(option) {
+
         var that = this
-            //调用应用实例的方法获取全局数据
-        app.getUserInfo(function(userInfo) {
-            //更新数据
+        //获取详情
+        var url = 'http://localhost:3000/taohuihui/goods/getDetails?_id=' + option._id;
+        that.getAjax(url,function(res){
             that.setData({
-                userInfo: userInfo
+                detailsData: res.data.list[0]
             })
         })
     },
-    changeIndicatorDots: function(e) {
-        this.setData({
-            indicatorDots: !this.data.indicatorDots
+
+    getAjax:function(url,fn){
+        wx.request({
+          url: url,
+          method:'GET',
+          header: {
+              'content-type': 'application/json'
+          },
+          success: function(res) {
+            fn(res)
+          }
         })
     },
-    changeAutoplay: function(e) {
-        this.setData({
-            autoplay: !this.data.autoplay
-        })
-    },
-    intervalChange: function(e) {
-        this.setData({
-            interval: e.detail.value
-        })
-    },
-    durationChange: function(e) {
-        this.setData({
-            duration: e.detail.value
-        })
+    onShareAppMessage: function () {
+        return {
+          title: '微信小程序联盟',
+          desc: '最具人气的小程序开发联盟!',
+          path: '/page/user?id=123'
+        }
     },
     imageLoad: function(e) {  
         var _this=this;  
@@ -63,5 +57,25 @@ Page({
             imgwidth:viewWidth,  
             imgheight:viewHeight  
         })  
-    } 
+    },
+    changeIndicatorDots: function(e) {
+        this.setData({
+          indicatorDots: !this.data.indicatorDots
+        })
+    },
+    changeAutoplay: function(e) {
+        this.setData({
+          autoplay: !this.data.autoplay
+        })
+    },
+    intervalChange: function(e) {
+        this.setData({
+          interval: e.detail.value
+        })
+    },
+    durationChange: function(e) {
+        this.setData({
+          duration: e.detail.value
+        })
+    }
 })

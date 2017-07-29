@@ -9,7 +9,6 @@ Page({
         posterData:[],
         page:1,
         pageSize:30,
-        userInfo: {},
         indicatorDots: true,
         autoplay: true,
         interval: 5000,
@@ -78,9 +77,29 @@ Page({
         //wx.stopPullDownRefresh()
     },
     toPage:function(event){
-        var _id = event.currentTarget._id
+        var _id = event.currentTarget.id
         wx.navigateTo({
           url: '../details/details?_id=' + _id
+        })
+    },
+    changeIndicatorDots: function(e) {
+        this.setData({
+          indicatorDots: !this.data.indicatorDots
+        })
+    },
+    changeAutoplay: function(e) {
+        this.setData({
+          autoplay: !this.data.autoplay
+        })
+    },
+    intervalChange: function(e) {
+        this.setData({
+          interval: e.detail.value
+        })
+    },
+    durationChange: function(e) {
+        this.setData({
+          duration: e.detail.value
         })
     }
 })

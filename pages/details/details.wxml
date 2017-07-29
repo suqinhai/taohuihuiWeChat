@@ -1,18 +1,18 @@
 <view>
     <!-- 轮播 -->
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-        <block wx:for="{{imgUrls}}">
+        <block wx:for="{{detailsData.mainPic}}">
             <swiper-item>
                 <image src="{{item}}" class="slide-image" width="355" height="150" />
             </swiper-item>
         </block>
     </swiper>
     <view class="shopContent">
-        <view class="title">大圆环 圆圈腰带女 休闲简约百搭装饰连衣裙裤带 真皮学生细皮带</view>
-        <view class="sold">329件已售</view>
+        <view class="title">{{detailsData.title}}</view>
+        <view class="sold">{{detailsData.biz30day}}件已售</view>
         <view class="price">
-            <font>¥ <span>9.9</span></font><span></span>
-            <view class="fr">¥15</view>
+            <font>¥ <span>{{detailsData.zkPrice}}</span></font><span></span>
+            <view class="fr">¥{{detailsData.couponAmount}}</view>
         </view>
     </view>
 </view>
@@ -22,15 +22,18 @@
 </view>
 <view class="details" style="text-align: center;">
     <view class="title">产品详情</view>
-    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
-    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
-    <image width="100%" src="http://piccdn.duobuybuy.com/store/52026888-5905-4e32-9251-4d9d2d7278c2.png@!790x_q30" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
+    <block wx:for="{{detailsData.detailsPic}}">
+        <image width="100%" src="{{item}}" bindload="imageLoad" style="width:{{imgwidth}}rpx; height:{{imgheight }}rpx;" />
+    </block>
 </view>
 <view class="btn">
     <a class="home">
-        <view></view>
-        <font>首页</font>
+        <navigator url="../index/index">
+            <view></view>
+            <font>首页</font>
+        </navigator>
     </a>
+    
     <!-- 是微信浏览器和天猫商品 -->
     <a class="browser">浏览器购买</a>
     <!-- 不是微信浏览器和是天猫商品 -->
